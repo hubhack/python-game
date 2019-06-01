@@ -4,7 +4,7 @@ class Ship():
         # 初始化飞船
         self.screen = screen
         # 加载飞船图像并过去其中外接矩形
-        self.image= pygame.image.load()
+        self.image= pygame.image.load('./images/ship.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
