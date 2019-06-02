@@ -11,7 +11,7 @@ def run_game():
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
     # screen = pygame.display.set_mode((1200, 800))
-    pygame.display.set_caption('Alien Invasion')
+    pygame.display.set_caption('打蚊子游戏')
     # 设置背景色
     # bg_color = (230, 230, 230)
     ship = Ship(ai_settings, screen)
@@ -22,6 +22,11 @@ def run_game():
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.updata()
         bullets.update()
+        # 删除子弹
+        for bullet in bullets.copy():
+            if bullet.rect.bottom <= 0:
+                bullets.remove(bullet)
+        print(len(bullets))
         gf.update_screen(ai_settings, screen, ship, bullets)
 
 
