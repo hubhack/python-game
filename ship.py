@@ -1,15 +1,15 @@
 import pygame
 class Ship():
     def __init__( self, ai_settings, screen):
-        # 初始化飞船
+        # 初始化
         self.screen = screen
-        # 加载飞船图像并过去其中外接矩形
+        # 加载图像并过去其中外接矩形
         self.ai_settings = ai_settings
         self.image= pygame.image.load('images/1332.gif')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
-        # 将每艘飞船放在屏幕底部中央
+        # 将物品放在屏幕底部中央
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
 
@@ -20,7 +20,7 @@ class Ship():
         self.moving_left = False
     def updata(self):
         '''根据移动标志调整飞船位置'''
-        # 更新飞船的center值, 而不是rect
+        # 更新物品的center值, 而不是rect
 
         if self.moving_right and self.rect.right < self.screen_rect.right:
 
